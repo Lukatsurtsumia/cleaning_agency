@@ -32,7 +32,8 @@ COPY vite.config.js tailwind.config.js postcss.config.js ./
 RUN npm run build
 
 # ---------- 3) Runtime ----------
-FROM serversideup/php:8.3-fpm-nginx
+# 8.4 to match the PHP version composer.lock was resolved against (>= 8.4.1).
+FROM serversideup/php:8.4-fpm-nginx
 WORKDIR /var/www/html
 USER www-data
 
