@@ -15,6 +15,15 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('booking.index')" :active="request()->routeIs('booking.*')">
+                        {{ __('Bookings') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('gallery.index')" :active="request()->routeIs('gallery.*')">
+                        {{ __('Gallery') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('welcome')" :active="false">
+                        {{ __('View Site') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -69,6 +78,15 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('booking.index')" :active="request()->routeIs('booking.*')">
+                {{ __('Bookings') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('gallery.index')" :active="request()->routeIs('gallery.*')">
+                {{ __('Gallery') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('welcome')" :active="false">
+                {{ __('View Site') }}
             </x-responsive-nav-link>
         </div>
 

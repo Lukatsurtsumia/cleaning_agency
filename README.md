@@ -1,58 +1,59 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Cleaning Agency
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A Laravel 13 marketing/lead-gen site for a cleaning company. Blade + Alpine.js + Tailwind CSS (no SPA framework). Core flows: landing page with services and an instant quote calculator, a project gallery, and a contact form — all backed by real database records and email notifications.
 
-## About Laravel
+## Stack
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Laravel 13, Blade, Alpine.js, Tailwind CSS
+- Laravel Breeze (auth scaffolding)
+- MySQL via Laravel Sail (Docker)
+- Mailpit for local email testing
+- `barryvdh/laravel-dompdf` for downloadable quote PDFs
+- `intervention/image` for gallery image resizing
+- Pest for tests, Pint for code style
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## Running locally (Docker / Sail)
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+./vendor/bin/sail up -d          # start app, mysql, mailpit
+./vendor/bin/sail artisan migrate --seed
+./vendor/bin/sail npm install
+./vendor/bin/sail npm run dev    # Vite with hot reload, or `npm run build` for production assets
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+The app is served at the port set by `APP_PORT` in `.env` (default here: `http://localhost:8110`).
 
-## Contributing
+- Mailpit UI (catches all outgoing email): `http://localhost:8135`
+- MySQL is exposed on `FORWARD_DB_PORT` if you want to connect a GUI client.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+An admin user is seeded from the `ADMIN_EMAIL` / `ADMIN_PASSWORD` env vars (defaults: `admin@example.com` / `password`) — log in at `/login` to reach the dashboard, manage gallery projects, and view booking requests.
 
-## Code of Conduct
+Queued mail (booking/contact notifications) is processed by the `queue:listen` process — already included if you run:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+./vendor/bin/sail composer run dev
+```
 
-## Security Vulnerabilities
+which runs `serve`, `queue:listen`, `pail` (log tailing), and `vite` together.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Key routes
 
-## License
+| Route | Purpose |
+| --- | --- |
+| `GET /` | Landing page: hero, services, instant quote calculator, gallery preview, testimonials, contact form |
+| `GET /gallery` | Full project gallery, filterable by category |
+| `POST /booking` | Submits a quote request — computes price server-side, emails customer + agency, stores to DB |
+| `GET /booking/{booking}/pdf` | Downloadable quote PDF (signed URL for guests, or any logged-in admin) |
+| `POST /contact` | Contact form — emails customer + agency, stores to DB |
+| `/dashboard`, `/admin/bookings`, `/gallery-admin/*` | Auth-gated admin area (Breeze "logged in or not", no roles) |
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Pricing logic
+
+Quote estimates are computed in `app/Services/CleaningQuoteCalculator.php` from a base price per service type, a per-bedroom/bathroom charge, a property-type multiplier, and flat add-ons for extras. The Alpine.js calculator on the landing page mirrors this formula for a live preview, but the price that's actually saved and emailed is always computed server-side in `BookingController::store`.
+
+## Tests
+
+```bash
+./vendor/bin/sail artisan test
+./vendor/bin/sail pint          # code style
+```

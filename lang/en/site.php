@@ -1,0 +1,191 @@
+<?php
+
+return [
+
+    'brand' => [
+        'tagline' => 'Professional cleaning',
+        'tagline_full' => 'Professional, flexible cleaning services',
+        'manager_role' => 'Founder',
+    ],
+
+    'nav' => [
+        'home' => 'Home',
+        'services' => 'Services',
+        'pricing' => 'Pricing',
+        'gallery' => 'Our work',
+        'about' => 'About',
+        'contact' => 'Contact',
+        'book' => 'Book',
+        'menu' => 'Menu',
+        'close' => 'Close',
+        'lang_label' => 'Language',
+    ],
+
+    'hero' => [
+        'eyebrow' => 'Nice and the French Riviera',
+        'title_line1' => 'Spotless spaces,',
+        'title_line2' => 'a flawless impression.',
+        'lead' => 'Azur Clean Tinati handles professional cleaning for hotels, residences and offices across the French Riviera. Meticulous, flexible, eco-conscious.',
+        'cta_book' => 'Book a cleaning',
+        'cta_quote' => 'See pricing',
+        'scroll' => 'Explore',
+        'prev' => 'Previous slide',
+        'next' => 'Next slide',
+        'goto' => 'Go to slide :n',
+    ],
+
+    'services' => [
+        'eyebrow' => 'What we do',
+        'title' => 'Spaces we look after',
+        'lead' => 'Four service families, available as a regular contract or a one-off visit.',
+        'cta' => 'Request a quote',
+        'items' => [
+            [
+                'key' => 'hotelier',
+                'name' => 'Hotel cleaning',
+                'summary' => 'Guest rooms, corridors, lobbies and shared areas.',
+                'points' => ['Stayover and departure cleans', 'Shared areas', 'Linen handling', 'Quality checks'],
+                'icon' => 'bed',
+            ],
+            [
+                'key' => 'immeubles',
+                'name' => 'Buildings and residences',
+                'summary' => 'Common areas, lifts, staircases, entrance halls.',
+                'points' => ['Halls and stairwells', 'Lifts', 'Bin rooms', 'Bin collection days'],
+                'icon' => 'building',
+            ],
+            [
+                'key' => 'bureaux',
+                'name' => 'Offices and commercial units',
+                'summary' => 'Regular or one-off upkeep, outside business hours if needed.',
+                'points' => ['Workstations', 'Washrooms', 'Meeting rooms', 'Break areas'],
+                'icon' => 'briefcase',
+            ],
+            [
+                'key' => 'specifiques',
+                'name' => 'Specialist services',
+                'summary' => 'Windows, post-construction cleans, disinfection, urgent call-outs.',
+                'points' => ['Window cleaning', 'Post-works reset', 'Disinfection', 'Urgent call-out'],
+                'icon' => 'spray',
+            ],
+        ],
+    ],
+
+    'pricing' => [
+        'eyebrow' => 'Pricing',
+        'title' => 'Simple and transparent',
+        'lead' => 'A clear starting rate, then a free quote matched to your site within 24 hours.',
+        'from' => 'From',
+        'per_hour' => '/ hour',
+        'on_quote' => 'On quote',
+        'popular' => 'Most requested',
+        'cta' => 'Request a quote',
+        'note' => 'Indicative rates, excluding tax. The final quote depends on floor area, frequency and site constraints.',
+        'tiers' => [
+            'residences' => [
+                'name' => 'Residences and buildings',
+                'for' => 'Property managers, landlords, co-ownerships',
+                'includes' => ['Common areas', 'Regular visits', 'Bin collection days', 'Products supplied'],
+            ],
+            'bureaux' => [
+                'name' => 'Offices and retail',
+                'for' => 'Small and mid-sized businesses, shops',
+                'includes' => ['Daily or weekly upkeep', 'Out-of-hours available', 'Washrooms and shared areas', 'Products supplied'],
+            ],
+            'hotellerie' => [
+                'name' => 'Hotels and contracts',
+                'for' => 'Hotels and aparthotels',
+                'includes' => ['Stayover and departure cleans', 'Dedicated team', 'Quality checks', 'Contractual commitment'],
+            ],
+        ],
+    ],
+
+    'gallery' => [
+        'eyebrow' => 'Our work',
+        'title' => 'Recent sites',
+        'lead' => 'A few recent jobs, before and after.',
+        'all' => 'View all',
+        'view' => 'View this job',
+        'empty' => 'The first projects are coming soon.',
+        'back' => 'Back to home',
+    ],
+
+    'about' => [
+        'eyebrow' => 'About',
+        'title' => 'Tina Babayan, founder',
+        'body' => 'Eight years as head housekeeper in hospitality, including Adagio Nice Centre and Mama Shelter Nice. I founded Azur Clean Tinati to bring that same standard to the residences, offices and hotels of the French Riviera.',
+        'quote' => 'Cleanliness never comes without safety, or without trust.',
+        'stats' => [
+            ['value' => '8 years', 'label' => 'in hotel housekeeping'],
+            ['value' => '06', 'label' => 'Nice and the Riviera'],
+            ['value' => '24 h', 'label' => 'response time'],
+        ],
+        'eco_title' => 'Environmental commitment',
+        'eco_body' => 'Natural or ready-to-use products to avoid dosing errors, reusable packaging, waste sorting, and careful use of water and electricity.',
+    ],
+
+    // The public booking section (form, then a mailto: CTA) has since been
+    // removed entirely — "Réserver"/"Book" now just scrolls to #contact.
+    // This key survives only because App\Mail\BookingReceived/BookingConfirmation
+    // still render existing Booking records (admin dashboard, quote PDF, .ics
+    // feed) and read property_types.
+    'booking' => [
+        'property_types' => [
+            'apartment' => 'Apartment / residence',
+            'house' => 'Villa / house',
+            'office' => 'Offices / commercial unit',
+        ],
+    ],
+
+    'contact' => [
+        'eyebrow' => 'Contact',
+        'title' => 'Tell us about your site',
+        'lead' => 'A question, a quote, an urgent call-out? We reply within 24 hours.',
+        'manager' => 'Management',
+        'assistant' => 'Executive assistant',
+        'address_label' => 'Address',
+        'directions' => 'Directions',
+        'area_body' => 'Nice and the whole French Riviera.',
+        'hours_label' => 'Hours',
+        'hours_value' => 'Mon - Fri, 8am - 6pm · Sat, 8am - 1pm',
+        'direct_title' => 'Easiest of all: give us a call',
+        'direct_body' => 'One call is enough to arrange a visit or get a quote. Prefer to pick your own date? Book online in under a minute.',
+        'or' => 'or',
+        'form_title' => 'Write to us',
+        'form_lead' => 'Tell us what you need and we get back to you within 24 hours.',
+        'reach_title' => 'Reach us',
+        'call_cta' => 'Call now',
+        'success' => 'Thank you, your message has been sent. We reply within 24 hours.',
+        'fields' => [
+            'name' => 'Full name',
+            'email' => 'Email',
+            'phone' => 'Phone',
+            'subject' => 'Subject',
+            'message' => 'Your message',
+            'message_placeholder' => 'Site type, floor area, preferred frequency, your questions...',
+        ],
+        'submit' => 'Send message',
+    ],
+
+    'location' => [
+        'eyebrow' => 'Location',
+        'title' => 'Where to find us',
+        'lead' => 'Based in Nice, we work across the whole French Riviera.',
+    ],
+
+    'footer' => [
+        'rights' => 'All rights reserved.',
+        'legal' => 'Legal notice',
+        'nav_title' => 'Navigation',
+        'contact_title' => 'Contact',
+        'credit' => 'Designed by Luka Tsurtsumia',
+    ],
+
+    'common' => [
+        'call' => 'Call',
+        'email' => 'Send an email',
+        'required' => 'required',
+        'optional' => 'optional',
+    ],
+
+];

@@ -115,4 +115,15 @@ return [
         'name' => env('MAIL_FROM_NAME', env('APP_NAME', 'Laravel')),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Agency Notification Address
+    |--------------------------------------------------------------------------
+    |
+    | Where booking and contact form notifications are sent internally.
+    |
+    */
+
+    'agency_address' => env('AGENCY_EMAIL', env('MAIL_FROM_ADDRESS', 'hello@example.com')),
+
 ];

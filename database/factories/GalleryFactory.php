@@ -1,0 +1,27 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Http\Controllers\GalleryController;
+use App\Models\Gallery;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends Factory<Gallery>
+ */
+class GalleryFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'title' => $this->faker->sentence(3),
+            'category' => $this->faker->randomElement(GalleryController::CATEGORIES),
+            'description' => $this->faker->paragraph(),
+        ];
+    }
+}

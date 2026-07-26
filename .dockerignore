@@ -1,0 +1,34 @@
+# Build artifacts and deps rebuilt inside the image
+/vendor
+/node_modules
+/public/build
+/public/hot
+/public/storage
+
+# Local env & secrets — provided by Coolify at runtime
+.env
+.env.*
+!.env.example
+
+# VCS / tooling
+.git
+.gitignore
+.gitattributes
+.github
+
+# Dev-only
+/tests
+phpunit.xml
+compose.yaml
+/storage/logs/*
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+README.md
+DEPLOY.md
+CLAUDE.md
+*.md
+
+# OS cruft
+.DS_Store
+Thumbs.db

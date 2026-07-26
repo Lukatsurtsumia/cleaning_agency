@@ -1,3 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    /* Keeps Alpine-controlled elements hidden until Alpine boots. */
+    [x-cloak] {
+        display: none !important;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        /* Sticky header shouldn't cover the section you just jumped to. */
+        scroll-padding-top: 5rem;
+    }
+
+    body {
+        @apply bg-sand-50 text-azur-950;
+    }
+
+    /* Anyone who asked the OS to calm things down gets a static hero. */
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.001ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.001ms !important;
+        }
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-full bg-azur-700 px-6 py-3.5
+               text-sm font-semibold text-white shadow-lg shadow-azur-900/20 transition
+               hover:bg-azur-800 hover:shadow-xl focus-visible:outline focus-visible:outline-2
+               focus-visible:outline-offset-2 focus-visible:outline-azur-700;
+    }
+
+    .btn-ghost {
+        @apply inline-flex items-center justify-center gap-2 rounded-full border border-azur-700/25
+               bg-white/70 px-6 py-3.5 text-sm font-semibold text-azur-800 backdrop-blur transition
+               hover:border-azur-700/50 hover:bg-white focus-visible:outline focus-visible:outline-2
+               focus-visible:outline-offset-2 focus-visible:outline-azur-700;
+    }
+
+    .section-eyebrow {
+        @apply text-xs font-semibold uppercase tracking-[0.2em] text-azur-500;
+    }
+
+    .section-title {
+        @apply mt-3 font-display text-4xl font-semibold leading-tight text-azur-900 sm:text-5xl;
+    }
+
+    .card {
+        @apply rounded-2xl border border-azur-900/10 bg-white p-6 shadow-sm transition
+               hover:border-azur-700/30 hover:shadow-lg;
+    }
+}
