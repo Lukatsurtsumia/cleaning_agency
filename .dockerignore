@@ -5,6 +5,10 @@
 /public/hot
 /public/storage
 
+# Stale cached manifests from local dev — they reference dev-only packages
+# (e.g. laravel/pail) that aren't in the --no-dev image, so let them regenerate.
+/bootstrap/cache/*.php
+
 # Local env & secrets — provided by Coolify at runtime
 .env
 .env.*
