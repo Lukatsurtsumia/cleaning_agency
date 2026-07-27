@@ -8,10 +8,10 @@
      wordmark, which fits a horizontal header without shrinking the text. --}}
 <span {{ $attributes->merge(['class' => 'inline-flex']) }}>
     <span class="inline-flex items-center rounded-2xl bg-white shadow-sm ring-1 ring-azur-900/10
-                 {{ $full ? 'p-3' : 'px-3.5 py-2.5' }}">
+                 {{ $full ? 'p-2' : 'px-3.5 py-2.5' }}">
         <img src="{{ asset($full ? 'images/logo-full.png' : 'images/logo-wordmark.png') }}"
              alt="{{ config('azurclean.trading_name') }}" decoding="async"
              class="w-auto select-none
-                    {{ $full ? ($compact ? 'h-16' : 'h-20') : ($compact ? 'h-8' : 'h-10') }}">
+                    {{ $full ? ($compact ? 'h-12' : 'h-14') : ($compact ? 'h-8' : 'h-10') }}">
     </span>
 </span>

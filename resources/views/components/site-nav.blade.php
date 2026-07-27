@@ -20,8 +20,8 @@
             <span class="sr-only">{{ config('azurclean.trading_name') }}</span>
             {{-- No tagline in the bar: the mark now stacks above the wordmark
                  and a third line would not clear the 5rem header. --}}
-            <x-brand.logo :show-tagline="false" class="hidden sm:inline-flex" aria-hidden="true"/>
-            <x-brand.logo compact class="sm:hidden" aria-hidden="true"/>
+            <x-brand.logo full class="hidden sm:inline-flex" aria-hidden="true"/>
+            <x-brand.logo full compact class="sm:hidden" aria-hidden="true"/>
         </a>
 
         <nav class="hidden items-center gap-8 lg:flex" aria-label="{{ __('site.nav.menu') }}">
