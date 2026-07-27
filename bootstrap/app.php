@@ -13,6 +13,13 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Behind Coolify's Traefik proxy: TLS is terminated at the proxy and
+        // plain HTTP is forwarded to the container. Trust the proxy so Laravel
+        // reads X-Forwarded-Proto and generates https:// URLs (assets, links,
+        // redirects) instead of http:// — otherwise CSS/JS is blocked as
+        // mixed content on the https site.
+        $middleware->trustProxies(at: '*');
+
         $middleware->web(append: [
             SetLocale::class,
         ]);
