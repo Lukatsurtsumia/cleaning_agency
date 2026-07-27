@@ -51,7 +51,7 @@ return [
                 'key' => 'immeubles',
                 'name' => 'Appartements',
                 'summary' => 'Appartements et parties communes des immeubles résidentiels.',
-                'points' => ['Nettoyage complet d\'appartement', 'Cuisines et salles de bain', 'Halls et escaliers', 'Entrées et sorties de locataires'],
+                'points' => ['Nettoyage complet d\'appartement', 'Pièces et salles de bain', 'Halls et escaliers', 'Entrées et sorties de locataires'],
                 'icon' => 'building',
             ],
             [
@@ -64,8 +64,8 @@ return [
             [
                 'key' => 'specifiques',
                 'name' => 'Événements',
-                'summary' => 'Avant et après fêtes, réceptions et événements privés.',
-                'points' => ['Préparation avant l\'événement', 'Remise en état après', 'Cuisines et espaces de réception', 'Intervention le jour même'],
+                'summary' => 'Remise en état après fêtes, réceptions et événements privés.',
+                'points' => ['Remise en état après l\'événement', 'Espaces de réception et salles', 'Sols et surfaces', 'Intervention le jour même'],
                 'icon' => 'sparkle',
             ],
         ],
@@ -95,7 +95,7 @@ return [
             'hotellerie' => [
                 'name' => 'Hôtels & événements',
                 'for' => 'Hôtels, maisons d\'hôtes et événements privés',
-                'includes' => ['Remise en état des chambres', 'Avant / après événement', 'Équipe dédiée', 'Contrat ou ponctuel'],
+                'includes' => ['Remise en état des chambres', 'Remise en état après événement', 'Équipe dédiée', 'Contrat ou ponctuel'],
             ],
         ],
     ],

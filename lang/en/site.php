@@ -51,7 +51,7 @@ return [
                 'key' => 'immeubles',
                 'name' => 'Apartments',
                 'summary' => 'Apartments and the shared areas of residential buildings.',
-                'points' => ['Full apartment cleaning', 'Kitchens and bathrooms', 'Entrance halls and stairs', 'Move-in and move-out'],
+                'points' => ['Full apartment cleaning', 'Rooms and bathrooms', 'Entrance halls and stairs', 'Move-in and move-out'],
                 'icon' => 'building',
             ],
             [
@@ -64,8 +64,8 @@ return [
             [
                 'key' => 'specifiques',
                 'name' => 'Special events',
-                'summary' => 'Before and after parties, receptions and private events.',
-                'points' => ['Set-up before the event', 'Full clean-up afterwards', 'Kitchens and reception areas', 'Same-day turnaround'],
+                'summary' => 'Clean-up after parties, receptions and private events.',
+                'points' => ['Full clean-up after the event', 'Reception and dining areas', 'Floors and surfaces', 'Same-day turnaround'],
                 'icon' => 'sparkle',
             ],
         ],
@@ -95,7 +95,7 @@ return [
             'hotellerie' => [
                 'name' => 'Hotels & events',
                 'for' => 'Hotels, guesthouses and private events',
-                'includes' => ['Guest-room turnaround', 'Before / after events', 'Dedicated team', 'Contract or one-off'],
+                'includes' => ['Guest-room turnaround', 'After-event clean-up', 'Dedicated team', 'Contract or one-off'],
             ],
         ],
     ],
