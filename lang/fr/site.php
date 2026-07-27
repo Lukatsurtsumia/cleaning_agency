@@ -25,7 +25,7 @@ return [
         'eyebrow' => 'Nice et Côte d\'Azur',
         'title_line1' => 'Des espaces impeccables,',
         'title_line2' => 'une image irréprochable.',
-        'lead' => 'Azur Clean Tinati assure le nettoyage professionnel des hôtels, résidences et bureaux sur toute la Côte d\'Azur. Rigoureux, flexible, écologique.',
+        'lead' => 'Azur Clean Tinati assure le nettoyage professionnel des hôtels, résidences et villas sur toute la Côte d\'Azur. Rigoureux, flexible, écologique.',
         'cta_book' => 'Réserver une intervention',
         'cta_quote' => 'Voir les tarifs',
         'scroll' => 'Découvrir',
@@ -113,7 +113,7 @@ return [
     'about' => [
         'eyebrow' => 'À propos',
         'title' => 'Tina Babayan, fondatrice',
-        'body' => 'Huit ans comme gouvernante générale en hôtellerie, notamment chez Adagio Nice Centre et Mama Shelter Nice. J\'ai créé Azur Clean Tinati pour apporter ce même niveau d\'exigence aux résidences, bureaux et hôtels de la Côte d\'Azur.',
+        'body' => 'Huit ans comme gouvernante générale en hôtellerie, notamment au Mama Shelter Nice. J\'ai créé Azur Clean Tinati pour apporter ce même niveau d\'exigence aux résidences, villas et hôtels de la Côte d\'Azur.',
         'quote' => 'La propreté ne va jamais sans la sécurité, ni sans la confiance.',
         'stats' => [
             ['value' => '8 ans', 'label' => 'en gouvernance hôtelière'],
@@ -133,7 +133,7 @@ return [
         'property_types' => [
             'apartment' => 'Appartement / résidence',
             'house' => 'Villa / maison',
-            'office' => 'Bureaux / local professionnel',
+            'office' => 'Hôtel / événement',
         ],
     ],
 

@@ -25,7 +25,7 @@ return [
         'eyebrow' => 'Nice and the French Riviera',
         'title_line1' => 'Spotless spaces,',
         'title_line2' => 'a flawless impression.',
-        'lead' => 'Azur Clean Tinati handles professional cleaning for hotels, residences and offices across the French Riviera. Meticulous, flexible, eco-conscious.',
+        'lead' => 'Azur Clean Tinati handles professional cleaning for hotels, homes and private villas across the French Riviera. Meticulous, flexible, eco-conscious.',
         'cta_book' => 'Book a cleaning',
         'cta_quote' => 'See pricing',
         'scroll' => 'Explore',
@@ -113,7 +113,7 @@ return [
     'about' => [
         'eyebrow' => 'About',
         'title' => 'Tina Babayan, founder',
-        'body' => 'Eight years as head housekeeper in hospitality, including Adagio Nice Centre and Mama Shelter Nice. I founded Azur Clean Tinati to bring that same standard to the residences, offices and hotels of the French Riviera.',
+        'body' => 'Eight years as head housekeeper in hospitality, including Mama Shelter Nice. I founded Azur Clean Tinati to bring that same standard to the homes, villas and hotels of the French Riviera.',
         'quote' => 'Cleanliness never comes without safety, or without trust.',
         'stats' => [
             ['value' => '8 years', 'label' => 'in hotel housekeeping'],
@@ -133,7 +133,7 @@ return [
         'property_types' => [
             'apartment' => 'Apartment / residence',
             'house' => 'Villa / house',
-            'office' => 'Offices / commercial unit',
+            'office' => 'Hotel / event venue',
         ],
     ],
 
