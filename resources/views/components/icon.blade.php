@@ -32,6 +32,10 @@
             <rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/><path d="M3 12h18"/>
             @break
 
+        @case('home')
+            <path d="M4 11l8-6 8 6"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/>
+            @break
+
         @case('spray')
             <path d="M9 8h5a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2V8z"/><path d="M10 8V5h3"/><path d="M18 5h.01M20.5 7.5h.01M18 10h.01M20.5 12h.01"/>
             @break

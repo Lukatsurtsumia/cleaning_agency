@@ -5,8 +5,8 @@
     $placeholders = [
         'hotelier' => ['icon' => 'bed', 'gradient' => 'from-azur-700 to-azur-400'],
         'immeubles' => ['icon' => 'building', 'gradient' => 'from-azur-800 to-azur-500'],
-        'bureaux' => ['icon' => 'briefcase', 'gradient' => 'from-azur-900 to-azur-600'],
-        'specifiques' => ['icon' => 'spray', 'gradient' => 'from-azur-600 to-azur-300'],
+        'bureaux' => ['icon' => 'home', 'gradient' => 'from-azur-900 to-azur-600'],
+        'specifiques' => ['icon' => 'sparkle', 'gradient' => 'from-azur-600 to-azur-300'],
     ];
 
     $serviceNames = collect(__('site.services.items'))->pluck('name', 'key');

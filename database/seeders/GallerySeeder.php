@@ -10,12 +10,12 @@ class GallerySeeder extends Seeder
     public function run(): void
     {
         $projects = [
-            ['title' => 'Résidence Le Falicon, parties communes', 'category' => 'immeubles', 'description' => 'Entretien hebdomadaire des halls, escaliers et ascenseurs sur trois bâtiments.'],
-            ['title' => 'Hôtel Promenade, recouches', 'category' => 'hotelier', 'description' => 'Recouches et mises à blanc quotidiennes, 48 chambres en haute saison.'],
-            ['title' => 'Bureaux Arenas, entretien du soir', 'category' => 'bureaux', 'description' => 'Passage quotidien après 19 h pour un plateau de 14 postes.'],
-            ['title' => 'Désinfection renforcée, cabinet médical', 'category' => 'specifiques', 'description' => 'Désinfection complète et traitement des surfaces de contact, protocole renforcé.'],
-            ['title' => 'Remise en état après travaux, Cimiez', 'category' => 'specifiques', 'description' => 'Dépoussiérage complet et remise en état d\'un appartement après rénovation.'],
-            ['title' => 'Résidence étudiante, rotation', 'category' => 'immeubles', 'description' => 'Remise en état de douze studios entre deux périodes de location.'],
+            ['title' => 'Villa, Mont Boron', 'category' => 'bureaux', 'description' => 'Nettoyage complet d\'une villa avec terrasses et grandes baies vitrées.'],
+            ['title' => 'Hôtel, Promenade des Anglais', 'category' => 'hotelier', 'description' => 'Remise à blanc des chambres et entretien quotidien des espaces communs.'],
+            ['title' => 'Appartement, Cimiez', 'category' => 'immeubles', 'description' => 'Nettoyage complet d\'un appartement entre deux locations.'],
+            ['title' => 'Réception privée, Cap de Nice', 'category' => 'specifiques', 'description' => 'Préparation avant réception et remise en état complète après l\'événement.'],
+            ['title' => 'Villa, Saint-Jean-Cap-Ferrat', 'category' => 'bureaux', 'description' => 'Grand nettoyage de fin de location saisonnière, intérieur et extérieur.'],
+            ['title' => 'Résidence, Carré d\'Or', 'category' => 'immeubles', 'description' => 'Entretien hebdomadaire des halls, escaliers et ascenseurs.'],
         ];
 
         foreach ($projects as $project) {
