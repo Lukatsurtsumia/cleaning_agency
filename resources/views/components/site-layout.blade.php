@@ -43,10 +43,12 @@
     <meta property="og:description" content="{{ $pageDescription }}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="{{ app()->getLocale() === 'fr' ? 'fr_FR' : 'en_GB' }}">
+    <meta property="og:image" content="{{ asset('images/logo-full.png') }}">
     <meta name="theme-color" content="#164442">
 
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}?v=2">
     <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
-    <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}?v=2">
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700|cormorant-garamond:500,600,600i&display=swap" rel="stylesheet">

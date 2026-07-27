@@ -20,7 +20,7 @@
          reachable from the header nav on every breakpoint). --}}
     <div class="mx-auto grid max-w-7xl gap-6 px-4 pb-5 pt-10 sm:grid-cols-3 sm:px-6 lg:px-8">
         <div>
-            <x-brand.logo tone="invert" compact/>
+            <x-brand.logo full compact/>
         </div>
 
         <div>

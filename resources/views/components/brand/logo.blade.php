@@ -1,24 +1,17 @@
-@props(['tone' => 'color', 'compact' => false, 'showTagline' => true])
+@props(['tone' => 'color', 'compact' => false, 'showTagline' => true, 'full' => false])
 
-@php
-    $invert = $tone === 'invert';
-@endphp
-
-{{-- The mark is a wide horizontal wave, so it stacks above the wordmark rather
-     than sitting beside it, which is also how it reads on the printed card. --}}
-<span {{ $attributes->merge(['class' => 'inline-flex flex-col items-start leading-none']) }}>
-    <x-brand.mark :tone="$invert ? 'light' : 'color'"
-                  class="{{ $compact ? 'h-6' : 'h-8' }} w-auto"/>
-
-    <span class="mt-1.5 font-display {{ $compact ? 'text-base' : 'text-xl' }} font-semibold tracking-wide
-                 {{ $invert ? 'text-white' : 'text-azur-900' }}">
-        Azur Clean <span class="italic">Tinati</span>
+{{-- Tina's real brand logo (script wordmark + "Propreté & Sérénité" + the
+     wave-and-house mark). It sits on a white background, so it rides in a soft
+     white badge that reads cleanly on any surface: the transparent header over
+     the hero photo, the light header once scrolled, and the dark footer.
+     `full` shows the complete lockup (with the wave); the default is the wide
+     wordmark, which fits a horizontal header without shrinking the text. --}}
+<span {{ $attributes->merge(['class' => 'inline-flex']) }}>
+    <span class="inline-flex items-center rounded-2xl bg-white shadow-sm ring-1 ring-azur-900/10
+                 {{ $full ? 'p-3' : 'px-3.5 py-2.5' }}">
+        <img src="{{ asset($full ? 'images/logo-full.png' : 'images/logo-wordmark.png') }}"
+             alt="{{ config('azurclean.trading_name') }}" decoding="async"
+             class="w-auto select-none
+                    {{ $full ? ($compact ? 'h-16' : 'h-20') : ($compact ? 'h-8' : 'h-10') }}">
     </span>
-
-    @if ($showTagline && ! $compact)
-        <span class="mt-1 text-[0.6rem] font-medium uppercase tracking-[0.18em]
-                     {{ $invert ? 'text-white/70' : 'text-azur-600' }}">
-            {{ __('site.brand.tagline') }}
-        </span>
-    @endif
 </span>
