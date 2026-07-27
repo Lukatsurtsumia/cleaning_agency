@@ -64,8 +64,8 @@ return [
             [
                 'key' => 'specifiques',
                 'name' => 'Special events',
-                'summary' => 'Clean-up after parties, receptions and private events.',
-                'points' => ['Full clean-up after the event', 'Reception and dining areas', 'Floors and surfaces', 'Same-day turnaround'],
+                'summary' => 'Cleaning after parties and private events.',
+                'points' => ['Cleaning after the event', 'Halls and event spaces', 'Floors and surfaces', 'Same-day service'],
                 'icon' => 'sparkle',
             ],
         ],
@@ -95,7 +95,7 @@ return [
             'hotellerie' => [
                 'name' => 'Hotels & events',
                 'for' => 'Hotels, guesthouses and private events',
-                'includes' => ['Guest-room turnaround', 'After-event clean-up', 'Dedicated team', 'Contract or one-off'],
+                'includes' => ['Guest-room cleaning', 'Cleaning after events', 'Dedicated team', 'Contract or one-off'],
             ],
         ],
     ],

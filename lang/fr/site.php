@@ -64,8 +64,8 @@ return [
             [
                 'key' => 'specifiques',
                 'name' => 'Événements',
-                'summary' => 'Remise en état après fêtes, réceptions et événements privés.',
-                'points' => ['Remise en état après l\'événement', 'Espaces de réception et salles', 'Sols et surfaces', 'Intervention le jour même'],
+                'summary' => 'Nettoyage après fêtes et événements privés.',
+                'points' => ['Nettoyage après l\'événement', 'Salles et espaces', 'Sols et surfaces', 'Intervention le jour même'],
                 'icon' => 'sparkle',
             ],
         ],
@@ -95,7 +95,7 @@ return [
             'hotellerie' => [
                 'name' => 'Hôtels & événements',
                 'for' => 'Hôtels, maisons d\'hôtes et événements privés',
-                'includes' => ['Remise en état des chambres', 'Remise en état après événement', 'Équipe dédiée', 'Contrat ou ponctuel'],
+                'includes' => ['Nettoyage des chambres', 'Nettoyage après événement', 'Équipe dédiée', 'Contrat ou ponctuel'],
             ],
         ],
     ],
