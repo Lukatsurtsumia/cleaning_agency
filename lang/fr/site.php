@@ -102,7 +102,7 @@ return [
 
     'gallery' => [
         'eyebrow' => 'Réalisations',
-        'title' => 'Nos chantiers',
+        'title' => 'Projets récents',
         'lead' => 'Quelques interventions récentes, avant et après.',
         'all' => 'Tout voir',
         'view' => 'Voir le chantier',

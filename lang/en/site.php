@@ -102,7 +102,7 @@ return [
 
     'gallery' => [
         'eyebrow' => 'Our work',
-        'title' => 'Recent sites',
+        'title' => 'Recent projects',
         'lead' => 'A few recent jobs, before and after.',
         'all' => 'View all',
         'view' => 'View this job',
