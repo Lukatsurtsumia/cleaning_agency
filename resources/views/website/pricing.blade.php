@@ -8,7 +8,7 @@
     <x-waves class="opacity-20"/>
 
     <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl">
+        <div class="reveal max-w-2xl">
             <p class="text-xs font-semibold uppercase tracking-[0.2em] text-azur-300">
                 {{ __('site.pricing.eyebrow') }}
             </p>
@@ -20,7 +20,8 @@
 
         <div class="mt-12 grid gap-6 lg:grid-cols-3">
             @foreach ($pricing as $tier)
-                <article class="relative flex flex-col rounded-2xl p-7 transition
+                <div class="reveal" style="--reveal-delay: {{ $loop->index * 110 }}ms">
+                <article class="relative flex h-full flex-col rounded-2xl p-7 transition
                                 {{ $tier['featured']
                                      ? 'bg-white shadow-2xl shadow-black/20 ring-2 ring-azur-300 lg:-translate-y-3'
                                      : 'bg-white/5 ring-1 ring-white/15 backdrop-blur hover:bg-white/10' }}">
@@ -74,6 +75,7 @@
                         <x-icon name="arrow-right" class="h-4 w-4"/>
                     </a>
                 </article>
+                </div>
             @endforeach
         </div>
 

@@ -53,6 +53,13 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    {{-- Reveal-on-scroll starts elements hidden and JS fades them in. With JS
+         off (or before it runs), show everything so content is never stuck
+         invisible for no-script visitors or crawlers. --}}
+    <noscript>
+        <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
+    </noscript>
+
     <script type="application/ld+json">
         {!! json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}
     </script>

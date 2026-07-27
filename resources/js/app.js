@@ -68,3 +68,36 @@ Alpine.data('slideshow', (total, intervalMs = 6500) => ({
 }));
 
 Alpine.start();
+
+// Reveal-on-scroll: fade/slide elements marked `.reveal` into place the first
+// time they enter the viewport, then stop watching them. Anyone who asked their
+// OS to reduce motion (or whose browser lacks IntersectionObserver) just gets
+// everything shown at once — no hidden start state, no animation.
+(function initReveal() {
+    const els = document.querySelectorAll('.reveal');
+
+    if (!els.length) {
+        return;
+    }
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+        els.forEach((el) => el.classList.add('is-visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    obs.unobserve(entry.target);
+                }
+            });
+        },
+        { rootMargin: '0px 0px -10% 0px', threshold: 0.12 }
+    );
+
+    els.forEach((el) => observer.observe(el));
+})();

@@ -58,7 +58,29 @@
     }
 
     .card {
-        @apply rounded-2xl border border-azur-900/10 bg-white p-6 shadow-sm transition
-               hover:border-azur-700/30 hover:shadow-lg;
+        @apply rounded-2xl border border-azur-900/10 bg-white p-6 shadow-sm transition duration-300
+               hover:-translate-y-1 hover:border-azur-700/30 hover:shadow-lg;
+    }
+}
+
+/* Reveal-on-scroll. Elements marked `.reveal` start slightly lowered and
+   transparent, then ease into place when they enter the viewport (the
+   `is-visible` class is added by the IntersectionObserver in app.js). The
+   whole effect lives inside a `no-preference` query, so anyone who asked their
+   OS to reduce motion never gets the hidden start state — content is simply
+   there. An optional `--reveal-delay` staggers items in a grid. */
+@media (prefers-reduced-motion: no-preference) {
+    .reveal {
+        opacity: 0;
+        transform: translateY(1.25rem);
+        transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        transition-delay: var(--reveal-delay, 0ms);
+        will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+        opacity: 1;
+        transform: none;
     }
 }

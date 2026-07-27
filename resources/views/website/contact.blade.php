@@ -7,7 +7,7 @@
 @endphp
 
 <section id="contact" class="mx-auto max-w-7xl scroll-mt-24 px-4 py-24 sm:px-6 lg:px-8 lg:py-28">
-    <div class="max-w-2xl">
+    <div class="reveal max-w-2xl">
         <p class="section-eyebrow">{{ __('site.contact.eyebrow') }}</p>
         <h2 class="section-title">{{ __('site.contact.title') }}</h2>
         <p class="mt-4 text-base leading-relaxed text-azur-800/70">{{ __('site.contact.lead') }}</p>
@@ -15,7 +15,7 @@
 
     <div class="mt-12 grid gap-8 lg:grid-cols-5 lg:gap-10">
         {{-- Reach us — call & book presented on their own, away from the form. --}}
-        <aside class="space-y-6 lg:col-span-2">
+        <aside class="reveal space-y-6 lg:col-span-2">
             <div class="rounded-3xl bg-azur-900 p-6 text-white shadow-xl sm:p-8">
                 <h3 class="font-display text-2xl font-semibold">{{ __('site.contact.reach_title') }}</h3>
 
@@ -47,7 +47,7 @@
         </aside>
 
         {{-- The contact form. --}}
-        <div class="lg:col-span-3">
+        <div class="reveal lg:col-span-3" style="--reveal-delay: 120ms">
             <div class="rounded-3xl border border-azur-900/10 bg-white p-6 shadow-sm sm:p-8">
                 <h3 class="font-display text-2xl font-semibold text-azur-900">{{ __('site.contact.form_title') }}</h3>
                 <p class="mt-1.5 text-sm text-azur-800/60">{{ __('site.contact.form_lead') }}</p>

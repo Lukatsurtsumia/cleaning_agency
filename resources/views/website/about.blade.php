@@ -1,5 +1,5 @@
 <section id="a-propos" class="bg-sand-100 py-24 lg:py-28">
-    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+    <div class="reveal mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
         <p class="section-eyebrow inline-flex">{{ __('site.about.eyebrow') }}</p>
         <h2 class="section-title">{{ __('site.about.title') }}</h2>
 

@@ -1,5 +1,5 @@
 <section id="services" class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-28">
-    <div class="max-w-2xl">
+    <div class="reveal max-w-2xl">
         <p class="section-eyebrow">{{ __('site.services.eyebrow') }}</p>
         <h2 class="section-title">{{ __('site.services.title') }}</h2>
         <p class="mt-4 text-base leading-relaxed text-azur-800/70">{{ __('site.services.lead') }}</p>
@@ -7,7 +7,8 @@
 
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         @foreach ($services as $service)
-            <article class="card flex flex-col border-t-4 {{ ['border-t-azur-500', 'border-t-azur-600', 'border-t-azur-700', 'border-t-azur-400'][$loop->index % 4] }}">
+            <div class="reveal" style="--reveal-delay: {{ $loop->index * 90 }}ms">
+            <article class="card flex h-full flex-col border-t-4 {{ ['border-t-azur-500', 'border-t-azur-600', 'border-t-azur-700', 'border-t-azur-400'][$loop->index % 4] }}">
                 <div class="flex items-start justify-between">
                     <span class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-azur-700 text-white shadow-sm">
                         <x-icon :name="$service['icon']" class="h-6 w-6"/>
@@ -31,9 +32,8 @@
                         </li>
                     @endforeach
                 </ul>
-
-              
             </article>
+            </div>
         @endforeach
     </div>
 </section>

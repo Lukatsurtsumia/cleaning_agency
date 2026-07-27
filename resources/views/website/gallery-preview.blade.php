@@ -15,7 +15,7 @@
 <section id="realisations" class="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-28">
     {{-- No "view all" link: the cards themselves are the way in — click a photo
          to open that section's gallery. --}}
-    <div class="max-w-2xl">
+    <div class="reveal max-w-2xl">
         <p class="section-eyebrow">{{ __('site.gallery.eyebrow') }}</p>
         <h2 class="section-title">{{ __('site.gallery.title') }}</h2>
         <p class="mt-4 text-base leading-relaxed text-azur-800/70">{{ __('site.gallery.lead') }}</p>
@@ -38,6 +38,7 @@
                     // category shows a representative stock photo (public/images/gallery/).
                     $catPhoto = 'images/gallery/'.$gallery->category.'.jpg';
                 @endphp
+                <div class="reveal" style="--reveal-delay: {{ $loop->index * 100 }}ms">
                 <a href="{{ route('gallery.show', $gallery) }}"
                    class="group relative block overflow-hidden rounded-3xl bg-azur-900 shadow-md ring-1 ring-azur-900/5 transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
                     <div class="aspect-[16/10] overflow-hidden">
@@ -72,6 +73,7 @@
                         </span>
                     </div>
                 </a>
+                </div>
             @endforeach
         </div>
     @endif
