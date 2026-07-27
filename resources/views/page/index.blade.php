@@ -22,7 +22,8 @@
     @include('website.pricing', ['pricing' => $pricing])
     @include('website.gallery-preview', ['galleries' => $galleries])
     @include('website.about')
-    @include('website.contact')
-    {{-- Map is its own section now, separate from the contact form. --}}
+        {{-- Map is its own section now, separate from the contact form. --}}
     @include('website.location')
+    @include('website.contact')
+
 </x-site-layout>
