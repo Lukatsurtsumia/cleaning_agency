@@ -12,7 +12,7 @@
         $photos[] = asset('storage/'.$image->path);
     }
     if (empty($photos)) {
-        foreach (['', '-2', '-3'] as $suffix) {
+        foreach (['', '-2', '-3', '-4', '-5'] as $suffix) {
             $p = 'images/gallery/'.$gallery->category.$suffix.'.jpg';
             if (file_exists(public_path($p))) {
                 $photos[] = asset($p);
