@@ -44,7 +44,7 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="{{ app()->getLocale() === 'fr' ? 'fr_FR' : 'en_GB' }}">
     <meta property="og:image" content="{{ asset('images/logo-full.png') }}">
-    <meta name="theme-color" content="#164442">
+    <meta name="theme-color" content="#173c56">
 
     <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}?v=2">
     <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">

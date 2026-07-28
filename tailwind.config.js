@@ -19,19 +19,21 @@ export default {
             },
 
             colors: {
-                // Sampled from the brush-stroke mark on Tina's visit card.
+                // Balanced azure-teal: shifted toward the blue of the logo wave
+                // while keeping some of the original deep-teal calm (a middle
+                // ground between the old teal-green and a pure navy blue).
                 azur: {
-                    50: '#f0f8f7',
-                    100: '#d8ecea',
-                    200: '#b1d9d5',
-                    300: '#7dbfb9',
-                    400: '#4a9f98',
-                    500: '#2d827b',
-                    600: '#1f6963',
-                    700: '#1a5451',
-                    800: '#164442',
-                    900: '#133836',
-                    950: '#0a2322',
+                    50: '#eef5fb',
+                    100: '#d4e6f3',
+                    200: '#a9cfe4',
+                    300: '#73abce',
+                    400: '#4388bd',
+                    500: '#266ea2',
+                    600: '#1d597f',
+                    700: '#194a67',
+                    800: '#173c56',
+                    900: '#143045',
+                    950: '#0a1d2b',
                 },
                 // The card stock itself.
                 sand: {

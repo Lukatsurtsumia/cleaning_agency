@@ -8,10 +8,10 @@
     $crest = 'M0 100C90 26 300 26 480 100C660 174 800 174 960 100C1120 26 1300 26 1440 100L1440 200L0 200Z';
 
     $bands = [
-        ['path' => $crest,  'fill' => '#b1d9d5', 'opacity' => '0.35', 'bottom' => 'bottom-10 sm:bottom-14', 'height' => 'h-20 sm:h-28'],
-        ['path' => $ripple, 'fill' => '#7dbfb9', 'opacity' => '0.45', 'bottom' => 'bottom-5 sm:bottom-8',   'height' => 'h-16 sm:h-24'],
-        ['path' => $swell,  'fill' => '#2d827b', 'opacity' => '0.55', 'bottom' => 'bottom-1',               'height' => 'h-16 sm:h-20'],
-        ['path' => $ripple, 'fill' => '#164442', 'opacity' => '1',    'bottom' => '-bottom-1',              'height' => 'h-12 sm:h-16'],
+        ['path' => $crest,  'fill' => '#a9cfe4', 'opacity' => '0.35', 'bottom' => 'bottom-10 sm:bottom-14', 'height' => 'h-20 sm:h-28'],
+        ['path' => $ripple, 'fill' => '#73abce', 'opacity' => '0.45', 'bottom' => 'bottom-5 sm:bottom-8',   'height' => 'h-16 sm:h-24'],
+        ['path' => $swell,  'fill' => '#266ea2', 'opacity' => '0.55', 'bottom' => 'bottom-1',               'height' => 'h-16 sm:h-20'],
+        ['path' => $ripple, 'fill' => '#173c56', 'opacity' => '1',    'bottom' => '-bottom-1',              'height' => 'h-12 sm:h-16'],
     ];
 @endphp
 
