@@ -46,9 +46,9 @@
     <meta property="og:image" content="{{ asset('images/logo-full.png') }}">
     <meta name="theme-color" content="#173c56">
 
-    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}?v=2">
-    <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
-    <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}?v=2">
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}?v=4">
+    <link rel="icon" href="{{ asset('favicon.ico') }}?v=4" sizes="any">
+    <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}?v=4">
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700|cormorant-garamond:500,600,600i&display=swap" rel="stylesheet">
