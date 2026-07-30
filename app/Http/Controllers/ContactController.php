@@ -26,13 +26,17 @@ class ContactController extends Controller
             'message' => ['required', 'string', 'min:10', 'max:3000'],
         ]);
 
-        $contactMessage = ContactMessage::create($data);
+     $contactMessage = ContactMessage::create($data);
 
-        Mail::to(config('mail.agency_address'))->send(new ContactReceived($contactMessage));
-        Mail::to($contactMessage->email)->send(new ContactAutoReply($contactMessage));
+try {
+    Mail::to(config('mail.agency_address'))->send(new ContactReceived($contactMessage));
+    Mail::to($contactMessage->email)->send(new ContactAutoReply($contactMessage));
+} catch (\Throwable $e) {
+    dd($e->getMessage());
+}
 
-        return back()
-            ->with('contact_status', __('site.contact.success'))
-            ->withFragment('contact');
+return back()
+    ->with('contact_status', __('site.contact.success'))
+    ->withFragment('contact');
     }
 }
