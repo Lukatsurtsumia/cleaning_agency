@@ -35,4 +35,11 @@ return [
         ],
     ],
 
+    // Cloudflare Turnstile — invisible CAPTCHA for the contact form. When both
+    // keys are empty the check is skipped, so the site works before keys are set.
+    'turnstile' => [
+        'site_key' => env('TURNSTILE_SITE_KEY'),
+        'secret_key' => env('TURNSTILE_SECRET_KEY'),
+    ],
+
 ];

@@ -68,6 +68,11 @@
                         <input id="contact-website" type="text" name="website" tabindex="-1" autocomplete="off">
                     </div>
 
+                    {{-- Time-trap: encrypted render time. The controller rejects
+                         submissions that arrive suspiciously fast (bots). --}}
+                    <input type="hidden" name="ts" value="{{ encrypt(now()->timestamp) }}">
+
+
                     <div class="grid gap-5 sm:grid-cols-2">
                         <x-form.field name="name" :label="__('site.contact.fields.name')" required autocomplete="name"/>
                         <x-form.field name="email" type="email" :label="__('site.contact.fields.email')" required autocomplete="email"/>
@@ -78,6 +83,15 @@
                                       :placeholder="__('site.contact.fields.message_placeholder')"/>
                     </div>
 
+                    {{-- Cloudflare Turnstile — invisible anti-bot check. Only
+                         renders once a site key is configured. --}}
+                    @if (config('services.turnstile.site_key'))
+                        <div class="cf-turnstile mt-6"
+                             data-sitekey="{{ config('services.turnstile.site_key') }}"
+                             data-theme="light"
+                             data-language="{{ app()->getLocale() }}"></div>
+                    @endif
+
                     <button type="submit" class="btn-primary mt-6 w-full sm:w-auto">
                         {{ __('site.contact.submit') }}
                         <x-icon name="arrow-right" class="h-4 w-4"/>
@@ -86,4 +100,8 @@
             </div>
         </div>
     </div>
+
+    @if (config('services.turnstile.site_key'))
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    @endif
 </section>
