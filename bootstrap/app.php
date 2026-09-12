@@ -20,6 +20,10 @@ return Application::configure(basePath: dirname(__DIR__))
         // mixed content on the https site.
         $middleware->trustProxies(at: '*');
 
+        // Browser hardening headers (HSTS, nosniff, anti-clickjacking) on
+        // every response, including /up.
+        $middleware->append(\App\Http\Middleware\SecurityHeaders::class);
+
         $middleware->web(append: [
             SetLocale::class,
         ]);
