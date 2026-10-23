@@ -20,7 +20,7 @@ it('requires auth to create a gallery project', function () {
 });
 
 it('lets an authenticated user create a gallery project', function () {
-    $user = User::factory()->create();
+    $user = User::factory()->admin()->create();
 
     $response = $this->actingAs($user)->post(route('gallery.store'), [
         'title' => 'Test Project',

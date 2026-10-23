@@ -42,7 +42,11 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+        // Accounts off the admin list get the same answer as a wrong password,
+        // so the form doesn't reveal which addresses exist.
+        $allowed = in_array(Str::lower($this->string('email')), config('azurclean.admin_emails'), true);
+
+        if (! $allowed || ! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([

@@ -42,4 +42,14 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
+
+    /**
+     * Give the model the first address on the admin list (azurclean.admin_emails).
+     */
+    public function admin(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'email' => config('azurclean.admin_emails')[0],
+        ]);
+    }
 }

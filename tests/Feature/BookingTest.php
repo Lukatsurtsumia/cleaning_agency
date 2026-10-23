@@ -70,7 +70,7 @@ it('rejects a preferred date in the past', function () {
 });
 
 it('lets an authenticated user download a booking pdf', function () {
-    $user = User::factory()->create();
+    $user = User::factory()->admin()->create();
     $booking = Booking::factory()->create();
 
     $this->actingAs($user)

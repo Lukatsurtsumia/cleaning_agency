@@ -59,6 +59,17 @@ return [
     ],
 
     /*
+    | Only these accounts may sign in and use the admin pages (bookings,
+    | gallery, profile). Registration is closed and the users table is shared
+    | with another app, so having an account is not enough. Comma-separated
+    | ADMIN_EMAILS in .env overrides the default (the manager's address).
+    */
+    'admin_emails' => array_values(array_filter(array_map(
+        fn (string $email) => strtolower(trim($email)),
+        explode(',', (string) env('ADMIN_EMAILS', 'tinababayan99@gmail.com')),
+    ))),
+
+    /*
     | Reservation requests are confirmed by phone, so there is no availability
     | gating. The only setting left is the secret segment for the .ics feed that
     | lets the agency subscribe to confirmed jobs. Set AGENDA_FEED_TOKEN in .env.
